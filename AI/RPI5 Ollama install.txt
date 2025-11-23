@@ -1,0 +1,49 @@
+https://github.com/ollama
+---------------------------------------------------
+sudo apt update -y
+
+sudo apt update -y						install ollama
+
+sudo apt install curl
+
+curl -fsSL https://ollama.com/install.sh | sh
+---------------------------------------------------
+systemctl enable ollama
+systemctl start ollama
+---------------------------------------------------
+Start Ollama
+ollama serve 	-----is used when you want to start ollama without running the desktop application.
+
+Building
+See the developer guide
+
+Running local builds
+Next, start the server:
+
+./ollama serve
+Finally, in a separate shell, run a model:
+
+./ollama run llama3.2
+
+---------------------------------------------------
+
+docker pull ollama/ollama					Docker Pull Command
+			
+pip install ollama
+
+
+---------------------------------------------------
+ollama run codeqwen
+ollama run starling-lm
+ollama run codellama
+ollama run codellama
+ollama run llava
+ollama run granite3.2
+	
+---------------------------------------------------					
+Quickstart
+To run and chat with Llama 3.2:
+
+ollama run llama3.2
+---------------------------------------------------------
+ollama list

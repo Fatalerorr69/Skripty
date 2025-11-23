@@ -1,0 +1,126 @@
+Package Managers NOT in the RPIOS/Debian Repos: (Nala is now in Debian Unstable)
+
+Pi-Apps https://github.com/Botspot/pi-apps
+Code:
+wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+
+PIKISS https://github.com/jmcerrejon/PiKISS
+Code:
+curl -sSL https://git.io/JfAPE | bash
+
+Pi-Ware https://pi-ware.ml/
+To install Pi-Ware, run the command below:
+Code:
+git clone https://github.com/piware14/pi-ware.git
+cd pi-ware
+bash install
+
+Appimage: Linux apps that run anywhere https://appimage.org/
+
+App-Outlet https://github.com/app-outlet/app-outlet
+App Outlet is a Universal application store. It easily allows you to search and download applications that run on most Linux distributions.
+It currently supports AppImages, Flatpaks and Snap packages.
+How to install the App Outlet app store on Linux https://www.addictivetips.com/ubuntu-linux-tips/install-app-outlet-app-store-on-linux/
+Youtube video on how to use/install https://yewtu.be/latest_version?id=_TfmoSDypgA&itag=22&local=true
+Download/Install https://www.pling.com/p/1355468/#files-panel
+Or you can build it: https://github.com/app-outlet/app-outlet/blob/main/CONTRIBUTING.md
+
+CLI AppImage Management Tool - Search, install, update and remove AppImage from the comfort of your CLI.
+https://github.com/AppImageCrafters/appimage-cli-tool
+
+AppImageLauncher - Integrate AppImages to your application launcher with one click, and manage, update and remove them from there.
+https://github.com/TheAssassin/AppImageLauncher
+
+AppImage Pool – Software Center for Linux Apps as AppImage Packages
+https://ubuntuhandbook.org/index.php/2022/02/search-download-linux-apps-appimage/
+Download the x86_64 appimage from https://github.com/prateekmedia/appimagepool/releases
+
+AppImageUpdate lets you update AppImages in a decentral way using information embedded in the AppImage itself.
+https://github.com/AppImage/AppImageUpdate
+
+Zap https://zap.srev.in/
+AppImage package manager
+How to install:
+Code:
+ wget https://github.com/srevinsaju/zap/releases/download/v2-continuous/zap -O ~/.local/bin/zap chmod +x ~/.local/bin/zap zap init
+
+
+Nodejs: https://nodejs.org/en/
+
+nvm - Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions https://github.com/nvm-sh/nvm
+Install Node.js Locally with Node Version Manager (nvm) https://heynode.com/tutorial/install-nodejs-locally-nvm/
+Pi-Apps can be used to install Nodejs and nvm
+
+npm - a JavaScript package manager https://www.npmjs.com/
+npm comes bundled with node, & most third-party distributions, by default.
+You can use APT or nvm to install npm
+Code:
+sudo apt install npm
+
+Yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. https://yarnpkg.com/
+Installation: https://yarnpkg.com/getting-started/install
+Or you can use npm:
+Code:
+npm install -g yarn
+To update to the latest version:
+Code:
+yarn set version latest
+
+NodeSource: Node.js Binary Distributions https://github.com/nodesource/distributions
+Installation: https://github.com/nodesource/distributions#debinstall=
+
+Python:
+pip is the Python package manager. It’s used to install and update packages.
+Installing packages using pip and virtual environments
+https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+
+Miscellaneous:
+Nala - A wrapper for the apt package manager https://gitlab.com/volian/nala
+Install the Volian Scar repo and then install Nala. Nala is now in Debian Unstable
+Note: Currently only amd64, arm64 and armhf packages are supported
+Code:
+echo "deb [arch=amd64,arm64,armhf] http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+sudo apt update && sudo apt install nala
+
+Universal Update Script https://github.com/Crilum/update
+update is a small script that updates apps from Apt, Pi-Apps, Flatpak, Homebrew, NPM, and the Snap Store, a.k.a. snapd.
+To Install:
+Code:
+curl "https://raw.githubusercontent.com/Crilum/update/main/install" | sudo bash
+It is also available from Ryan's Raspberrypi-addons repo: https://docs.raspbian-addons.org/install/
+
+Makedeb https://www.makedeb.org/
+A simplicity-focused packaging tool for Debian archives
+How to install:
+https://docs.makedeb.org/installing/apt-repository/
+
+pacstall- The AUR for Ubuntu https://github.com/pacstall/pacstall
+How to install:
+Code:
+sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
+
+deb-get - apt-get functionality for .debs published in 3rd party repositories or via direct download.
+https://ubuntuhandbook.org/index.php/2022/05/deb-get-make-easy-install-deb-ubuntu/
+https://github.com/wimpysworld/deb-get
+Install:
+Code:
+sudo apt install curl
+curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+
+Eget: easy pre-built binary installation https://github.com/zyedidia/eget
+Install:
+Code:
+curl -o eget.sh https://zyedidia.github.io/eget.sh
+shasum -a 256 eget.sh # verify with hash below
+bash eget.sh
+
+Electron App Store - A Cross Platform App Store for Open-Source apps! (Abandoned)
+Website https://electron-store.org/
+Download from: https://github.com/Electron-Store/electron-app-store/releases
+
+bauh (ba-oo), formerly known as fpakman, is a graphical interface for managing your Linux software (packages/applications). It currently supports the following formats: AppImage (Only x86_64 AppImage files are available through the search mechanism at the moment), Debian and Arch Linux packages (including AUR), Flatpak, Snap and Web applications.
+Website - https://github.com/vinifmor/bauh
+Install:
+Code:
+sudo pip3 install bauh

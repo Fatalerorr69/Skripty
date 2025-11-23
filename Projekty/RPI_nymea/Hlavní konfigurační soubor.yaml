@@ -1,0 +1,42 @@
+# Konfigurace vzdělávacího systému
+system:
+  name: "Raspberry Pi Education System"
+  version: "2.0"
+  language: "cs"
+  timezone: "Europe/Prague"
+
+network:
+  hostname: "rpi-edu-001"
+  static_ip: "192.168.1.100"
+  gateway: "192.168.1.1"
+  dns_servers: ["8.8.8.8", "1.1.1.1"]
+
+security:
+  ssh_port: 2222
+  firewall_enabled: true
+  automatic_updates: true
+  backup_schedule: "0 2 * * 0"  # Každou neděli ve 2:00
+
+education:
+  default_projects_path: "/home/education-system/projects"
+  teacher_username: "teacher"
+  student_username_prefix: "student"
+  max_projects_per_student: 5
+
+projects:
+  categories:
+    - name: "programming"
+      enabled: true
+      tools: ["python", "java", "scratch"]
+    - name: "robotics"
+      enabled: true
+      tools: ["arduino", "raspberry-gpio"]
+    - name: "iot"
+      enabled: true
+      tools: ["node-red", "mqtt", "sensors"]
+
+monitoring:
+  enabled: true
+  metrics_port: 9090
+  alerting_enabled: true
+  log_retention_days: 30

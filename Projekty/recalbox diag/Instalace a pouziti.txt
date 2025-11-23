@@ -1,0 +1,13 @@
+cd /recalbox/share/system/
+unzip recalbox-tools.zip
+chmod -R +x recalbox-tools
+
+bash /recalbox/share/system/recalbox-tools/main-menu.sh
+
+
+cd /recalbox/share/system/recalbox-tools
+dos2unix *.sh  # nebo sed -i 's/\r$//' *.sh
+
+chmod +x *.sh
+
+bash main-menu.sh

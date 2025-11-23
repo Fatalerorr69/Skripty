@@ -1,0 +1,7 @@
+{
+  "VMList": ["RAW-OS","Ubuntu-Lomini","Android -x86"],
+  "LogFile": "vm_log.txt",
+  "SnapshotDir": "_snapshots",
+  "BackupDir": "_backups",
+  "RefreshInterval": 5
+}

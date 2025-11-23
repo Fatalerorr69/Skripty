@@ -1,0 +1,64 @@
+<Window 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VM Console" Height="600" Width="800">
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="VM Management">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Seznam virtuálních strojů:" FontWeight="Bold"/>
+                    <ListBox Name="VmList" Height="200" Margin="0,5"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Button Name="BtnStart" Content="Start" Width="80" Margin="0,0,5,0"/>
+                        <Button Name="BtnStop" Content="Stop" Width="80"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            
+            <TabItem Header="Síť">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Nastavení síťového adaptéru" FontWeight="Bold"/>
+                    <TextBox Name="TxtIPAddress" Width="200" Margin="0,5" Text="192.168.0.100"/>
+                    <Button Name="BtnApplyNetwork" Content="Použít" Width="100"/>
+                </StackPanel>
+            </TabItem>
+            
+            <TabItem Header="Zálohy">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Zálohování VM" FontWeight="Bold"/>
+                    <Button Name="BtnBackupNow" Content="Spustit zálohu" Width="150" Margin="0,5"/>
+                </StackPanel>
+            </TabItem>
+            
+            <TabItem Header="Monitoring">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Využití CPU:"/>
+                    <ProgressBar Name="CpuUsageBar" Height="20" Minimum="0" Maximum="100" Value="35"/>
+                    <TextBlock Text="Využití RAM:" Margin="0,10,0,0"/>
+                    <ProgressBar Name="RamUsageBar" Height="20" Minimum="0" Maximum="100" Value="60"/>
+                </StackPanel>
+            </TabItem>
+            
+            <TabItem Header="Profily">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Uživatelské profily" FontWeight="Bold"/>
+                    <ComboBox Name="ProfileSelector" Width="200" Margin="0,5">
+                        <ComboBoxItem>Admin</ComboBoxItem>
+                        <ComboBoxItem>Operator</ComboBoxItem>
+                        <ComboBoxItem>Viewer</ComboBoxItem>
+                    </ComboBox>
+                    <Button Name="BtnLoadProfile" Content="Načíst" Width="100"/>
+                </StackPanel>
+            </TabItem>
+            
+            <TabItem Header="Plánovač">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Čas spuštění:" Margin="0,0,0,5"/>
+                    <TextBox Name="TxtTime" Width="150" Margin="0,0,0,10" Text="08:00"/>
+                    <Button Name="BtnSchedule" Content="Naplánovat" Width="120"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

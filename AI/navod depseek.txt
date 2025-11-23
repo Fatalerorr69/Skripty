@@ -1,0 +1,26 @@
+skript pro Depseek ona RPI5-lite OS
+
+sudo apt update
+
+
+sudo apt upgrade
+
+
+
+sudo apt install curl
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+ollama run deepseek-r1:1.5b
+
+ollama run deepseek-r1:7b
+
+ollama run deepseek-r1:8b
+
+
+ollama run deepseek-r1:14b
+
+https://pimylifeup.com/raspberry-pi-deepseek/
+
+
+

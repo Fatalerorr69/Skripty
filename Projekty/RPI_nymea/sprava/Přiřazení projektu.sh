@@ -1,0 +1,1 @@
+./project-manager project assign --project "weather-station" --student "jan.novak"

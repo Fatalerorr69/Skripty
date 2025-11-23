@@ -1,0 +1,9 @@
+[2025-08-20 03:54:58][INFO] Start Installer.ps1 v6.1
+[2025-08-20 03:54:58][INFO] VBoxManage: C:\Program Files\Oracle\VirtualBox\VBoxManage.exe
+[2025-08-20 03:54:58][INFO] Vytvořen zástupce: C:\Users\Fatal\Desktop\RAW OS Launcher.lnk
+[2025-08-20 03:54:58][ERROR] Hlavní skript nebyl nalezen: C:\Users\Fatal\Desktop\GitHub\Moje Skripty\Skripty\Projekt-1\SpustitVM-v6.ps1
+[2025-08-20 07:08:00][INFO] Start Installer.ps1 v6.1
+[2025-08-20 07:08:00][INFO] VBoxManage: C:\Program Files\Oracle\VirtualBox\VBoxManage.exe
+[2025-08-20 07:08:00][INFO] Vytvořen zástupce: C:\Users\Fatal\Desktop\RAW OS Launcher.lnk
+[2025-08-20 07:08:01][INFO] Start hlavní aplikace: C:\Users\Fatal\Desktop\GitHub\Moje Skripty\Skripty\Projekt-1\SpustitVM-v6.ps1
+[2025-08-20 07:14:29][INFO] Installer dokončen.

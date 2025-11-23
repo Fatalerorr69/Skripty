@@ -1,0 +1,8 @@
+# Editace síťového nastavení
+sudo nano /etc/dhcpcd.conf
+
+# Přidání konfigurace statické IP (upravte podle vaší sítě)
+interface eth0
+static ip_address=192.168.1.100/24
+static routers=192.168.1.1
+static domain_name_servers=8.8.8.8 1.1.1.1

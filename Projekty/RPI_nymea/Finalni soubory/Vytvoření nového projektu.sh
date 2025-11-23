@@ -1,0 +1,1 @@
+./project-manager create --name "Muj projekt" --category programming --difficulty beginner

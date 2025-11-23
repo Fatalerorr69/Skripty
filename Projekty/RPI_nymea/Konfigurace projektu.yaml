@@ -1,0 +1,46 @@
+# Konfigurace projektu: Weather Station
+project:
+  id: "weather-station-001"
+  name: "Chytrá meteorologická stanice"
+  category: "iot"
+  difficulty: "intermediate"
+  duration_weeks: 4
+  team_size: 3
+
+learning_objectives:
+  - "Porozumění IoT principům"
+  - "Práce se senzory"
+  - "Základy programování v Pythonu"
+  - "Vizualizace dat"
+
+hardware_requirements:
+  - "Raspberry Pi 5"
+  - "BME280 senzor (teplota, vlhkost, tlak)"
+  - "LED diody"
+  - "Rezistory"
+
+software_requirements:
+  - "Python 3.9+"
+  - "Adafruit_BME280 knihovna"
+  - "Matplotlib"
+  - "SQLite3"
+
+milestones:
+  - name: "Hardwarová instalace"
+    deadline: "2025-09-20"
+    completed: false
+  - name: "Sběr dat"
+    deadline: "2025-09-27"
+    completed: false
+  - name: "Vizualizace"
+    deadline: "2025-10-04"
+    completed: false
+  - name: "Prezentace"
+    deadline: "2025-10-11"
+    completed: false
+
+assessment_criteria:
+  functionality: 40%
+  code_quality: 25%
+  documentation: 20%
+  creativity: 15%

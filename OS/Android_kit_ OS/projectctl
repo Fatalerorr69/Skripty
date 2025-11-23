@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# === COLORS ===
+GREEN="\e[32m"; RED="\e[31m"; YELLOW="\e[33m"; RESET="\e[0m"
+
+# === USAGE ===
+if [[ $# -lt 2 ]]; then
+  echo -e "${YELLOW}Použití:${RESET} projectctl <projekt> <setup|launch|snapshot>"
+  exit 1
+fi
+
+PROJECT=$1
+ACTION=$2
+BASE="/srv/machines/${PROJECT}"
+SCRIPT="${BASE}/scripts/${ACTION}.sh"
+
+# === CHECK ===
+if [[ ! -f "$SCRIPT" ]]; then
+  echo -e "${RED}❌ Skript '${ACTION}.sh' pro projekt '${PROJECT}' nenalezen.${RESET}"
+  exit 1
+fi
+
+# === EXECUTE ===
+echo -e "${GREEN}🚀 Spouštím '${ACTION}' pro projekt '${PROJECT}'...${RESET}"
+bash "$SCRIPT"

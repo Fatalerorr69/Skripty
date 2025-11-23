@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -6,4 +7,14 @@ Comment=Spustí skript pro údržbu a čištění systému
 Exec=lxterminal -e 'sudo ~/udrzba.sh'
 Icon=utilities-system-monitor
 Terminal=false
+=======
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Údržba Systému
+Comment=Spustí skript pro údržbu a čištění systému
+Exec=lxterminal -e 'sudo ~/udrzba.sh'
+Icon=utilities-system-monitor
+Terminal=false
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845
 StartupNotify=true

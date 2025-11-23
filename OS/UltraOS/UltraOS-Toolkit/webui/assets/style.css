@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     background-color: #222;
@@ -73,4 +74,81 @@ select {
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;
+=======
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #eee;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h1, h2, h3 {
+    color: #00f; /* Modrá barva pro nadpisy */
+}
+
+.device-status, .actions {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.action-card {
+    background-color: #555;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+button, input[type="submit"], input[type="file"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    background-color: #666;
+}
+
+select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #777;
+    background-color: #555;
+    color: #eee;
+    margin-right: 10px;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845
 }

@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 pi@raspberrypi:~ $ uname -arn
 
 sudo curl -sSL https://get.docker.com/ | sh
 
 pi@raspi2:~ $ docker run -d -p 80:80 nginx
+=======
+pi@raspberrypi:~ $ uname -arn
+
+sudo curl -sSL https://get.docker.com/ | sh
+
+pi@raspi2:~ $ docker run -d -p 80:80 nginx
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845

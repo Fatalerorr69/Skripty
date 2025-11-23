@@ -1,1 +1,0 @@
-./project-manager student add --name "Jan Novak" --class "8.A" --username "jan.novak"

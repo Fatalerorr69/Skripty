@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 unzip lcd-switch-raspi5.zip
 cd lcd-switch
 chmod +x *.sh
 ./lcd-on.sh   # Aktivace LCD
 ./lcd-off.sh  # Návrat na HDMI
+=======
+unzip lcd-switch-raspi5.zip
+cd lcd-switch
+chmod +x *.sh
+./lcd-on.sh   # Aktivace LCD
+./lcd-off.sh  # Návrat na HDMI
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845

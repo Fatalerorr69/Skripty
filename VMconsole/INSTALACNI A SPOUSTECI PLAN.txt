@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INSTALAČNÍ A SPOUŠTĚCÍ PLÁN – VMConsole
 
 1. Předinstalační příprava
@@ -50,3 +51,57 @@ Rotace záloh, Profily VM, Export/Import profilů.
 
 10. Spuštění na kliknutí
 Zástupce na plochu, plánovač startu VM.
+=======
+INSTALAČNÍ A SPOUŠTĚCÍ PLÁN – VMConsole
+
+1. Předinstalační příprava
+- Zálohuj stávající projektovou složku a skripty.
+- Ověř, že máš PowerShell 5.1+ a VirtualBox.
+- Vytvoř složku např. C:\VMConsole.
+
+2. Adresářová struktura
+Config\
+Modules\
+Scripts\
+Data\
+logs\
+backups\
+resources\
+
+3. Konfigurace
+V Config\Config.psd1:
+@{
+  VBoxManagePath = "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
+  MirrorToolPath = ""
+  LogDir         = "$PSScriptRoot\..\logs"
+  DataDir        = "$PSScriptRoot\..\Data"
+  DefaultVMType  = "headless"
+  DryRun         = $true
+  Confirm        = $true
+}
+
+4. Moduly do Modules\
+logging.psm1, vbox.psm1, network.psm1, scheduler.psm1, monitor.psm1, backup.psm1, mirror.psm1
+
+5. Spouštěcí skripty do Scripts\
+Start-VMConsole.ps1, VMAction.ps1
+
+6. První spuštění – Dry-run
+Set-ExecutionPolicy Bypass -Scope Process
+cd C:\VMConsole\Scripts
+.\Start-VMConsole.ps1
+Testuj funkce v GUI, ověř logy.
+
+7. Test funkcí
+Síť, Monitoring, Záloha, Mirror – sleduj log.
+
+8. Ostrý provoz
+Config.psd1: DryRun=$false, Confirm=$true
+Ověř cesty, spusť skripty znovu.
+
+9. Doporučené rozšíření
+Rotace záloh, Profily VM, Export/Import profilů.
+
+10. Spuštění na kliknutí
+Zástupce na plochu, plánovač startu VM.
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845

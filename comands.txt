@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Raspberry PI OS / Debian Package Managers
 
 
@@ -50,4 +51,58 @@ example.com_repo".
 Note, however, that while the repositories are curated, and that any
 repositories with malicious content will be removed and/or disabled
 when detected, no warranty is made by the Debian project as to the
+=======
+Raspberry PI OS / Debian Package Managers
+
+
+Gnome-Software (Removes pi-package/Add/Remove) Application manager for GNOME
+https://apps.gnome.org/en/app/org.gnome.Software/
+Code:
+sudo apt install gnome-software gnome-software-plugin-flatpak gnome-software-plugin-snap flatpak snapd packagekit-tools
+
+Plasma-Discover https://invent.kde.org/plasma/discover
+Code:
+sudo apt install plasma-discover plasma-discover-backend-flatpak plasma-discover-backend-snap
+
+Flatpak: Set-up flatpak https://flatpak.org/setup/Debian/
+Code:
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+Snap-store https://snapcraft.io/snap-store
+Snap Store is a graphical desktop application for discovering, installing and managing snaps on Linux
+Code:
+sudo snap install snap-store
+
+Synaptic https://wiki.debian.org/Synaptic
+Synaptic enables you to install, upgrade and remove software packages in a user friendly way.
+Code:
+sudo apt install synaptic
+
+Add/Remove Software (This is what pi-packages installed) https://help.gnome.org/users/gnome-packagekit/stable/
+Graphical distribution neutral package manager for GNOME
+Code:
+sudo apt install gnome-packagekit
+
+Package Search - GUI for searching packages and viewing package information
+Code:
+sudo apt install packagesearch
+
+extrepo - External repository manager
+https://salsa.debian.org/extrepo-team/extrepo-data/-/tree/master/repos/debian
+https://manpages.ubuntu.com/manpages/focal/man1/extrepo.1p.html
+
+Description: External repository manager
+External repositories are additional software package repositories that
+are not maintained by Debian. Before extrepo, maintainers of such
+repositories would suggest that you download and execute an (unsigned)
+shell script as root, or that you download and install their (unsigned)
+package, which is not ideal for security.
+The extrepo package tries to remedy this, by providing a curated list
+of external repositories that can be enabled by a simple command,
+allowing unsigned scripts to be replaced by a simple "extrepo enable
+example.com_repo".
+Note, however, that while the repositories are curated, and that any
+repositories with malicious content will be removed and/or disabled
+when detected, no warranty is made by the Debian project as to the
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845
 security or quality of the software in these third-party repositories

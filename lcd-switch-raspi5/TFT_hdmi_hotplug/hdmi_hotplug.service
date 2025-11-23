@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [Unit]
 Description=HDMI Hot-Plug Auto Switch
 After=multi-user.target
@@ -9,4 +10,17 @@ Restart=always
 User=pi
 
 [Install]
+=======
+[Unit]
+Description=HDMI Hot-Plug Auto Switch
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/hdmi_hotplug_switch.sh
+Restart=always
+User=pi
+
+[Install]
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845
 WantedBy=multi-user.target

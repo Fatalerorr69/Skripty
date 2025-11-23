@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Stažení a rozbalení balíčku:
 
 cd ~
@@ -21,3 +22,28 @@ Po instalaci:
 
 
 
+=======
+Stažení a rozbalení balíčku:
+
+cd ~
+tar -xzf starkos_web_v2_installer.tar.gz
+cd starkos_web_v2
+chmod +x install-starkos.sh
+
+
+Spuštění instalátoru:
+
+./install-starkos.sh
+
+
+Přístup k webovému dashboardu:
+Po instalaci:
+
+	-Otevři prohlížeč v jiném zařízení
+
+	-Zadej IP adresu Raspberry Pi, např.:
+		http://192.168.1.42:5000
+
+
+
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845

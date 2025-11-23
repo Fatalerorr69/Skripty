@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 mkdir -p ~/gamepad_profiles
 
@@ -21,4 +22,29 @@ cat > ~/gamepad_profiles/pg9157_android.amgp << 'EOF'
 EOF
 
 pkill antimicrox 2>/dev/null
+=======
+#!/bin/bash
+mkdir -p ~/gamepad_profiles
+
+cat > ~/gamepad_profiles/pg9157_android.amgp << 'EOF'
+{
+  "version": 2,
+  "controller": "Gamepad",
+  "mappings": {
+    "0": { "keys": ["HOME"] },
+    "1": { "keys": ["ESC"] },
+    "2": { "keys": ["LCTRL", "A"] },
+    "3": { "keys": ["LCTRL", "B"] },
+    "6": { "keys": ["MENU"] },
+    "7": { "keys": ["BACKSPACE"] },
+    "11": { "keys": ["UP"] },
+    "12": { "keys": ["DOWN"] },
+    "13": { "keys": ["LEFT"] },
+    "14": { "keys": ["RIGHT"] }
+  }
+}
+EOF
+
+pkill antimicrox 2>/dev/null
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845
 antimicrox --profile ~/gamepad_profiles/pg9157_android.amgp --hidden &

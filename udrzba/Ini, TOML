@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Údržba Systému
+Comment=Spustí skript pro údržbu a čištění systému
+Exec=lxterminal -e 'sudo ~/udrzba.sh'
+Icon=utilities-system-monitor
+Terminal=false
+StartupNotify=true

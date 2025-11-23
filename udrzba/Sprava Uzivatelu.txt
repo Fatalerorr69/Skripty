@@ -1,0 +1,48 @@
+Přeskočit na obsah
+Historie chatu
+
+Řekl/a jsi:
+raspberry 5 sprava uzivatelu
+ChatGPT řekl:
+Správa uživatelů na Raspberry Pi 5 (resp. v Raspbianu / Raspberry Pi OS nebo jiném Debian-based systému) se provádí pomocí klasických linuxových nástrojů přes terminál nebo GUI. Níže najdeš kompletní a strukturovaný návod:
+
+🧑‍💻 Základní příkazy pro správu uživatelů (CLI)
+✅ 1. Přidání nového uživatele
+sudo adduser novyuzivatel
+Vytvoří domovskou složku /home/novyuzivatel
+
+Dotáže se na heslo a osobní údaje
+
+✅ 2. Přidání uživatele do skupiny sudo (pro správce)
+sudo usermod -aG sudo novyuzivatel
+Uživatel získá oprávnění správce.
+
+✅ 3. Změna hesla uživatele
+sudo passwd nazev_uzivatele
+✅ 4. Smazání uživatele (bez mazání /home)
+sudo deluser nazev_uzivatele
+❌ Smazání včetně domovské složky:
+sudo deluser --remove-home nazev_uzivatele
+✅ 5. Zobrazení seznamu všech uživatelů
+cut -d: -f1 /etc/passwd
+✅ 6. Zobrazení skupin uživatele
+groups nazev_uzivatele
+🖥️ Grafická správa uživatelů (GUI)
+📦 Instalace nástroje gnome-system-tools (pokud chybí):
+sudo apt update
+sudo apt install gnome-system-tools
+Poté spusť:
+
+users-admin
+Umožňuje pohodlné klikací prostředí pro přidávání, odebírání uživatelů, nastavování skupin atd.
+
+🛡️ Bezpečnostní tipy
+Nepoužívej trvale účet pi – vytvoř si vlastní uživatele s sudo a pi případně smaž:
+
+sudo deluser pi
+Používej silná hesla nebo SSH s klíčem místo hesla.
+
+Pravidelně kontroluj skupinu sudo:
+
+getent group sudo
+Chceš-li konkrétní skript, který provede např. přidání uživatele, přiřazení do skupiny a deaktivaci pi, dej vědět – mohu připravit automatizační bash skript.

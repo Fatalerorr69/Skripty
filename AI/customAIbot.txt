@@ -1,0 +1,83 @@
+Chceš si na Kali Linux nainstalovat vlastního AI chatbota, který běží offline nebo online, s jednoduchým ovládáním? Mám pro tebe několik možností – od lehkých po pokročilejší:
+
+
+---
+
+1. Nejjednodušší: Chatbot přes Python a knihovnu transformers (offline)
+
+Tohle je způsob, jak si rozjet menší AI model lokálně:
+
+Krok 1: Instalace Python a potřebných knihoven
+
+sudo apt install python3 python3-pip
+pip install transformers torch
+
+Krok 2: Základní kód chatbota
+
+Vytvoř si soubor chatbot.py:
+
+from transformers import pipeline
+
+chatbot = pipeline("text-generation", model="microsoft/DialoGPT-medium")
+
+while True:
+    msg = input("Ty: ")
+    if msg.lower() in ["exit", "quit"]:
+        break
+    response = chatbot(msg, max_length=100, do_sample=True)[0]["generated_text"]
+    print("Bot:", response[len(msg):])
+
+Spusť:
+
+python3 chatbot.py
+
+
+---
+
+2. Lokální AI chatbot přes LM Studio nebo Ollama
+
+Pokud máš výkonnější PC (alespoň 8+ GB RAM), můžeš si stáhnout i větší modely:
+
+LM Studio: GUI aplikace pro spuštění AI chatbotů lokálně.
+
+Ollama: jednoduchý CLI nástroj pro spuštění modelů (LLaMA, Mistral, Gemma atd.)
+
+
+Ollama na Linuxu:
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+Pak spusť např.:
+
+ollama run mistral
+
+Chatbot poběží přímo v terminálu. Výhodou je, že model zůstává kompletně offline.
+
+
+---
+
+3. Online chatbot (rychlejší, méně náročné)
+
+Můžeš použít API od OpenAI (ChatGPT), Google (Gemini), nebo Anthropic (Claude).
+
+Potřebuješ API klíč a účet.
+
+
+Chceš jednoduchý Python chatbot s připojením na OpenAI API? I s tím ti můžu pomoct – jen potřebuješ API klíč z openai.com.
+
+
+---
+
+Co tě láká víc?
+
+[ ] Lokální offline chatbot s menším modelem
+
+[ ] Výkonnější model přes Ollama
+
+[ ] Online chatbot přes OpenAI API
+
+[ ] Vlastní jednoduchý bot v Pythonu
+
+
+Stačí říct, a nastavím ti to krok za krokem.
+

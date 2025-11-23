@@ -1,0 +1,33 @@
+
+sudo rm -rf LCD-show
+git clone https://github.com/goodtft/LCD-show.git
+chmod -R 755 LCD-show
+cd LCD-show
+sudo ./MHS35-show 270        
+  ---raspOS funguje
+
+
+
+popr: sudo ./LCD35-show
+
+------------------------------------------------------
+*uninstall*
+
+chmod -R 755 LCD-show 
+
+cd LCD-show/ 
+
+sudo ./LCD-hdmi
+
+------------------------------------------------------
+cd LCD-show/ 
+sudo ./rotate.sh 90
+
+(Hodnotu „ 90 “ lze změnit na 0, 90, 180 a 270, což představuje úhly natočení 0 stupňů, 90 stupňů, 180 stupňů a 270 stupňů.)
+
+-----------------------------------------------------
+v config.txt:
+ dtparam=spi=on ; 
+dtoverlay=piscreen,drm,rotate=180 
+
+a v Raspi-config provést toto: Interface → SPI = Enable, Advanced → Wayland → zvolit „X11 (Legacy) - Reboot.

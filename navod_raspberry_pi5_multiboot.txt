@@ -1,0 +1,90 @@
+
+# ✅ Návod: Bootování Raspberry Pi 5 z NVMe SSD, USB SSD a SD karty
+
+Tento návod popisuje, jak nastavit bootování Raspberry Pi 5 z **NVMe SSD (UEFI)** a používat **GRUB** pro výběr OS mezi NVMe SSD, USB SSD a SD kartou.
+
+---
+
+## 🛠 Požadavky
+- Raspberry Pi 5
+- NVMe SSD s adaptérem (např. M.2 PCIe to USB)
+- USB SSD s OS (např. Ubuntu, Arch Linux)
+- SD karta se záložním OS (např. Raspberry Pi OS)
+- Raspberry Pi Imager
+
+---
+
+## 1️⃣ Instalace UEFI na NVMe SSD
+1. **Připoj NVMe SSD a SD kartu k Raspberry Pi 5.**
+2. Flashni Raspberry Pi OS (Lite) na SD kartu pomocí Raspberry Pi Imager.
+3. Spusť Raspberry Pi z SD karty a aktualizuj firmware:
+   ```bash
+   sudo apt update && sudo apt full-upgrade -y
+   sudo rpi-eeprom-update -a
+   sudo reboot
+   ```
+4. **Naformátuj NVMe SSD na GPT a vytvoř EFI oddíl (512 MB, FAT32):**
+   ```bash
+   sudo fdisk /dev/nvme0n1
+   ```
+5. Stáhni UEFI firmware:
+   ```bash
+   git clone --depth=1 https://github.com/pftf/RPi5.git
+   sudo cp -r RPi5/* /boot/efi/
+   ```
+
+---
+
+## 2️⃣ Instalace GRUB na NVMe SSD
+1. Bootuj do Raspberry Pi OS (na NVMe nebo SD kartě).
+2. Nainstaluj GRUB:
+   ```bash
+   sudo apt install grub-efi
+   sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi
+   sudo update-grub
+   ```
+
+---
+
+## 3️⃣ Přidání USB SSD a SD karty do GRUB menu
+Pokud GRUB nedetekuje OS na USB SSD nebo SD kartě, přidej je ručně:
+```bash
+sudo nano /etc/grub.d/40_custom
+```
+Přidej záznamy:
+```bash
+menuentry "Ubuntu (USB SSD)" {
+    set root=(hd1,gpt2)
+    linux /boot/vmlinuz-linux root=/dev/sdb2 rw
+    initrd /boot/initramfs-linux.img
+}
+
+menuentry "Raspberry Pi OS (SD Card)" {
+    set root=(hd2,gpt2)
+    linux /boot/vmlinuz-linux root=/dev/mmcblk0p2 rw
+    initrd /boot/initrd.img
+}
+```
+Ulož (`CTRL+X`, `Y`, `ENTER`) a aktualizuj GRUB:
+```bash
+sudo update-grub
+```
+
+---
+
+## 🔹 Jak to funguje?
+1. **Pi startuje → UEFI Boot Manager** → Pokud nestiskneš ESC, nabootuje GRUB na NVMe SSD.
+2. **GRUB zobrazí OS na NVMe, USB SSD a SD kartě.**
+3. **Pokud vypneš NVMe SSD, Pi se pokusí bootovat z USB SSD nebo SD karty.**
+
+---
+
+## 🔹 Výhody řešení
+✅ **Rychlý boot z NVMe SSD (UEFI)**  
+✅ **GRUB umožní výběr OS z NVMe, USB SSD a SD karty**  
+✅ **Možnost snadného přidání dalších OS**  
+✅ **Záložní SD karta jako recovery systém**  
+
+---
+
+**Hotovo!** 🎉 Tvůj Raspberry Pi 5 nyní podporuje multiboot mezi různými úložišti.

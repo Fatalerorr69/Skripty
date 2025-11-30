@@ -1,0 +1,124 @@
+# Vytvoření kompletního přehledu příkazů WSL v souboru
+$wslCommands = @"
+# 📋 KOMPLETNÍ PŘEHLED PŘÍKAZŮ WSL
+# Generováno: $(Get-Date)
+# Systém: $($PSVersionTable.OS)
+
+## 🚀 INSTALACE A INICIALIZACE
+
+wsl --install                          # Nainstaluje WSL s výchozí distribucí (Ubuntu)
+wsl --install --distribution <distro>  # Nainstaluje konkrétní distribuci
+wsl --install -d <distro>              # Zkrácená verze (např. -d Ubuntu-22.04)
+wsl --install --no-launch              # Nainstaluje bez automatického spuštění
+wsl --install --web-download           # Stáhne nejnovější kernel z webu
+
+## 📊 SEZNAM A INFORMACE
+
+wsl --list                             # Zobrazí nainstalované distribuce
+wsl --list --verbose                   # Podrobný seznam s verzí WSL
+wsl --list -l -v                       # Zkrácená verze podrobného seznamu
+wsl --list --online                    # Dostupné distribuce k instalaci
+wsl --list -l -o                       # Zkrácená verze online seznamu
+wsl --list --quiet                     # Pouze názvy distribucí
+wsl --list -l -q                       # Zkrácená verze quiet režimu
+wsl --status                           # Stav WSL a verze kernelu
+
+## ⚙️ SPRÁVA DISTRIBUCÍ
+
+wsl --set-default <distro>             # Nastaví výchozí distribuci
+wsl --set-default-version <version>    # Nastaví výchozí verzi WSL (1/2)
+wsl --set-version <distro> <version>   # Převede distribuci na verzi WSL
+wsl --unregister <distro>              # Odstraní distribuci
+wsl --export <distro> <soubor>         # Exportuje distribuci do souboru
+wsl --import <distro> <cesta> <soubor> # Importuje distribuci ze souboru
+wsl --import-in-place <distro> <soubor> # Importuje na místě (WSL 2)
+
+## 🖥️ SPOUŠTĚNÍ A BĚH
+
+wsl                                    # Spustí výchozí distribuci
+wsl --distribution <distro>            # Spustí konkrétní distribuci
+wsl -d <distro>                        # Zkrácená verze
+wsl --user <uživatel>                  # Spustí s konkrétním uživatelem
+wsl -u <uživatel>                      # Zkrácená verze
+wsl --cd <cesta>                       # Spustí v konkrétním adresáři
+wsl --exec <příkaz>                    # Spustí příkaz bez shellu
+wsl --shell                            # Spustí výchozí shell
+
+## 🔧 SPRÁVA SLUŽBY
+
+wsl --shutdown                         # Okamžitě vypne všechny distribuce
+wsl --terminate <distro>               # Vypne konkrétní distribuci
+wsl --update                           # Aktualizuje WSL kernel
+wsl --update --rollback                # Vrátí předchozí verzi kernelu
+wsl --mount <disk>                     # Připojí fyzický disk ve WSL 2
+wsl --unmount <disk>                   # Odpojí disk
+
+## 📝 DIAGNOSTIKA A LOGOVÁNÍ
+
+wsl --log                              # Zapne logging
+wsl --log-level <úroveň>               # Nastaví úroveň logování
+wsl --help                             # Zobrazí nápovědu
+wsl -h                                 # Zkrácená verze nápovědy
+wsl --version                          # Zobrazí verzi WSL
+
+## 🎯 PRAKTICKÉ PŘÍKLADY
+
+# Instalace různých distribucí
+wsl --install -d Ubuntu
+wsl --install -d Ubuntu-22.04
+wsl --install -d Debian
+wsl --install -d Kali-Linux
+
+# Správa distribucí
+wsl --set-default Ubuntu
+wsl --set-version Ubuntu 2
+wsl --set-default-version 2
+
+# Export a import
+wsl --export Ubuntu C:\backup\ubuntu.tar
+wsl --import Ubuntu C:\WSL\Ubuntu C:\backup\ubuntu.tar
+
+# Spouštění s různými parametry
+wsl -d Ubuntu -u root
+wsl -d Ubuntu --cd /mnt/c/Users
+wsl --exec ls -la
+
+# Kombinované příkazy
+wsl -d Ubuntu -u starko --cd /mnt/w/WSL
+wsl -d Ubuntu --exec bash -c "cd /mnt/w && ls -la"
+
+## 🔄 NEJČASTĚJŠÍ KOMBINACE
+
+wsl --install                          # První instalace
+wsl --list --verbose                   # Kontrola distribucí
+wsl --set-default Ubuntu               # Nastavení výchozí
+wsl --set-version Ubuntu 2             # Přechod na WSL 2
+wsl --shutdown                         # Vypnutí WSL
+wsl --update                           # Aktualizace
+
+## 💾 ZÁLOHA A OBNOVA
+
+wsl --export Ubuntu backup.tar
+wsl --import Ubuntu C:\WSL\Ubuntu backup.tar
+wsl --unregister Ubuntu                # Před novou instalací
+
+## 🐛 ŘEŠENÍ PROBLÉMŮ
+
+wsl --status                           # Kontrola stavu
+wsl --shutdown                         # Reset při problémech
+wsl --update                           # Aktualizace kernelu
+wsl --unregister <problem-distro>      # Odstranění problematické distribuce
+
+## 📞 NÁPOVĚDA
+
+wsl --help                            # Základní nápověda
+wsl -h                                # Zkrácená nápověda
+Get-Command wsl                       # Informace o příkazu v PowerShellu
+
+"@
+
+# Uložení do souboru
+$wslCommands | Out-File -FilePath "wsl_prikazy_prehled.txt" -Encoding UTF8
+
+Write-Host "✓ Soubor 'wsl_prikazy_prehled.txt' byl úspěšně vytvořen!" -ForegroundColor Green
+Write-Host "📍 Cesta: $(Get-Location)\wsl_prikazy_prehled.txt" -ForegroundColor Yellow
